@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Grupo Lehren | &amp; Educación</title>
+  <!--PWA-->
+  <link rel="manifest" href="./manifest.json"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Luis Aldo Chadwick">
+
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+<!-- Meta and Opengraph tags -->
+  <meta name="description" content="Material Design Mediahawkz.com Fixed & Responsive Header with Sidebar, mediahawkz.com v2.1">
+  <meta name="keywords" content="material design, fixed header, responsive header, sidebar">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300'>
+
+<!--Carousell-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+</head>
+
+
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+  <div id="preloader"></div>
+<!-- partial:index.partial.html -->
+
+
+
+
+<!-- nav -->
+<nav class="sidebar">
+  <div class="nav-header">
+    <div class="logo-wrap">
+      <a class="logo-icon" href="#"><img alt="logo-icon" src="./img/docqui.png" width="40"></a>
+      <div id="contenido">
+      <a class="logo-text" href="#">Lehren</a>
+    </div>
+    </div>
+
+    <div class="nav-search">
+      <div class="search">
+        <i class="material-icons">search</i>
+        <input type="search" name="search" placeholder="Buscar" id="sidebarFinder">
+      </div>
+    </div>
+  </div>
+  <ul class="nav-categories ul-base">
+    <li><a href="./index.html"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
+    <li style="display: none;" class="menu-item logged-in"><a href="#"><i class="fa-regular fa-circle-info"></i>&nbsp;Acerca de</a></li>
+    <li><a href="./contacto/redes-sociales.html"><i class="fa fa-address-card"></i>&nbsp;Contacto</a></li>
+    <li style="display: none;" class="menu-item logged-in"><a href="#">Convocatoria</a></li>
+    <li><a href="./alumnos/mi-espacio.html"><i class="fas fa-graduation-cap"></i>&nbsp;Alumnos</a></li>
+    <li style="display: none;" class="menu-item logged-in"><a href="./docentes/mi-espacio.html"><i class="fa-regular fa-person-chalkboard"></i>&nbsp;Docentes</a></li>
+    <li style="display: none;" class="menu-item logged-in"><a href="#">Directivos</a></li>
+    <li style="display: none;" class="menu-item logged-in"><a href="#">Egresados</a></li>
+    <li><a href="#">Noticias</a></li>
+
+
+ 
+  </ul>
+  <br>
+  <ul class="social ul-base">
+    <li><a href="#" class="twitter" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    <li><a href="#" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#" class="google-plus" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+  </ul>
+  <div class="copyright">
+    <span>&copy; 2022 <a href="#" class="link">Grupo Lehren</a> Made in México</span>
+    <span>Designed by <a href="#" target="_blank">Lehren</a></span>
+  </div>
+</nav><!-- @end nav -->
+
+<!-- header -->
+<header>
+  <div class="header-inner clearfix">
+    
+    <!--div class="registro">
+
+
+            <li style="display: none;" class="logged-out menu-item">
+                <a class=" registration" href="#" data-toggle="modal" data-target="#signinModal"><i class="fas fa-user"></i>&nbsp;Accede</a>
+            </li>
+            <li style="display: none;" class="menu-item logged-in"><a class="registration" href="./clinica/promociones/avisos.html"><i class="fas fa-bell"></i>&nbsp;Promociones</a></li>&nbsp;
+            <li style="display: none;" class="boton-salir logged-in"><a href="#" id="logout" onclick="noticias()"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
+        </div-->
+
+    <div class="nav-btn nav-slider">
+      <i class="material-icons">menu</i>
+    </div>
+    <div class="header-logo">
+      <a href="#"><img alt="logo" src="./img/docqui.png"></a>
+    </div>
+    <!--div class="header-categories">
+      <ul class="ul-base">
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#"><span>Categories</span> <i class="material-icons">keyboard_arrow_down</i></a>
+          <ul class="dropdown-menu ul-base">
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Science</a></li>
+            <li><a href="#">Speak up</a></li>
+            <li><a href="#">General</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">World</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Entertainment</a></li>
+            <li><a href="#">Sports</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div-->
+    <div class="header-search">
+      <div class="search">
+        <i class="material-icons">search</i>
+        <input type="search" name="search" placeholder="Buscar" id="headerFinder">
+      </div>
+        <div>
+            <ul id="listOptions"></ul>
+        </div>
+    </div>
+    <div class="header-menu">
+      <ul class="ul-base">
+        <!--li><a href="#" class="twitter" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="google-plus" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a href="#">Login</a></li-->
+      
+          <li style="display: none;" class="logged-out menu-item">
+              <a class="registration" href="#" data-toggle="modal" data-target="#signinModal"><i class="fas fa-user"></i>&nbsp;Ingresa | Regístrate</a>
+          </li>
+          <!--li style="display: none;" class="logged-out"><a href="#" data-toggle="modal" data-target="#signupModal"><i class="fas fa-clipboard"></i>&nbsp;Registrate</a></li-->
+              <li style="display: none;" class="menu-item logged-in"><a class="registration" href="./avisos/mantente-informado.html"><i class="fas fa-bell"></i>&nbsp;Avisos</a></li>&nbsp;
+              <li style="display: none;" class="boton-salir logged-in"><a href="#" id="logout" onclick="noticias()"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
+
+        
+      </ul>
+      
+    </div>
+  </div>
+</header><!-- @end header -->
+
+<!-- Main content -->
+<main role="main"></main><!-- @end main -->
+
+<!-- Footer -->
+<footer></footer><!-- @end footer -->
+
+
+<div class="overlay"></div>
+
+
+
+
+
+
+<!-- Carousell-->
+<!-- partial:index.partial.html -->
+<div id="wrapper">
+  <section class="slideshow" id="js-header">
+    
+    <div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
+		<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
+			<div class="slideshow__slide-background-load-wrap background-absolute">
+				<div class="slideshow__slide-background-load background-absolute">
+					<div class="slideshow__slide-background-wrap background-absolute">
+						<div class="slideshow__slide-background background-absolute">
+							<div class="slideshow__slide-image-wrap background-absolute">
+								<div class="slideshow__slide-image background-absolute" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slideshow__slide-caption">
+			<div class="slideshow__slide-caption-text">
+				<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
+					<h1 class="slideshow__slide-caption-title">SUAL</h1>
+					<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
+						<span class="slideshow__slide-caption-subtitle-label">Ver Ahora</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+  <div class="slideshow__slide js-slider-home-slide is-current" data-slide="2">
+		<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
+			<div class="slideshow__slide-background-load-wrap background-absolute">
+				<div class="slideshow__slide-background-load background-absolute">
+					<div class="slideshow__slide-background-wrap background-absolute">
+						<div class="slideshow__slide-background background-absolute">
+							<div class="slideshow__slide-image-wrap background-absolute">
+								<div class="slideshow__slide-image background-absolute" style="background-image: url('https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slideshow__slide-caption">
+			<div class="slideshow__slide-caption-text">
+				<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
+					<h1 class="slideshow__slide-caption-title">SUAL</h1>
+					<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
+						<span class="slideshow__slide-caption-subtitle-label">Ver más</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="slideshow__slide js-slider-home-slide is-next" data-slide="3">
+		<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
+			<div class="slideshow__slide-background-load-wrap background-absolute">
+				<div class="slideshow__slide-background-load background-absolute">
+					<div class="slideshow__slide-background-wrap background-absolute">
+						<div class="slideshow__slide-background background-absolute">
+							<div class="slideshow__slide-image-wrap background-absolute">
+								<div class="slideshow__slide-image background-absolute" style="background-image: url('https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slideshow__slide-caption">
+			<div class="slideshow__slide-caption-text">
+				<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
+					<h1 class="slideshow__slide-caption-title">SUAL</h1>
+					<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
+						<span class="slideshow__slide-caption-subtitle-label">Ver más</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="slideshow__slide js-slider-home-slide is-prev" data-slide="4">
+		<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
+			<div class="slideshow__slide-background-load-wrap background-absolute">
+				<div class="slideshow__slide-background-load background-absolute">
+					<div class="slideshow__slide-background-wrap background-absolute">
+						<div class="slideshow__slide-background background-absolute">
+							<div class="slideshow__slide-image-wrap background-absolute">
+								<div class="slideshow__slide-image background-absolute" style="background-image: url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slideshow__slide-caption">
+			<div class="slideshow__slide-caption-text">
+				<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
+					<h1 class="slideshow__slide-caption-title">Grupo educativo Lehren</h1>
+					<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
+						<span class="slideshow__slide-caption-subtitle-label">Ver más</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="c-header-home_footer">
+		<div class="o-container">
+			<div class="c-header-home_controls -nomobile o-button-group">
+				<div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header">
+					<button class="o-button -white -square -left js-slider-home-button js-slider-home-prev" type="button">
+						<span class="o-button_label">
+							<svg class="o-button_icon" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-prev"></use></svg>
+						</span>
+					</button>
+					<button class="o-button -white -square js-slider-home-button js-slider-home-next" type="button">
+						<span class="o-button_label">
+							<svg class="o-button_icon" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-next"></use></svg>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+   
+    
+  </section>
+<div>
+<!--Termina Carousell-->
+
+<svg xmlns="http://www.w3.org/2000/svg">
+    <symbol viewBox="0 0 18 18" id="arrow-next">
+        <path id="arrow-next-arrow.svg" d="M12.6,9L4,17.3L4.7,18l8.5-8.3l0,0L14,9l0,0l-0.7-0.7l0,0L4.7,0L4,0.7L12.6,9z"/>
+    </symbol>
+    <symbol viewBox="0 0 18 18" id="arrow-prev">
+        <path id="arrow-prev-arrow.svg" d="M14,0.7L13.3,0L4.7,8.3l0,0L4,9l0,0l0.7,0.7l0,0l8.5,8.3l0.7-0.7L5.4,9L14,0.7z"/>
+    </symbol>
+</svg>
+
+
+
+
+
+   <!-- Home cards 1 -->
+   <div class="container_01">
+   <section class="home-cards">
+    <div>
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80" alt="">
+      <h3>Grupo Lehren</h3>
+      <p>
+        See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
+          to put her plans into play.
+      </p>
+      <div class="botones">
+        <button class="custom-btn btn-3"><span>Ver más</span></button>
+      </div>
+    </div>
+    <div>
+      <img src="https://i.ibb.co/KjGFHVJ/card2.png" alt="" />
+      <h3>Grupo Lehren</h3>
+      <p>
+        Express yourself powerfully with a thin, light, and elegant design,
+        faster performance, and up to 11.5 hours.
+      </p>
+      <div class="botones">
+        <button class="custom-btn btn-3"><span>Ver más</span></button>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="" />
+      <h3>Grupo Lehren</h3>
+      <p>
+        Buy an Xbox One X console and double your fun with a free select
+        extra controller. Starting at $349.
+      </p>
+      <div class="botones">
+        <button class="custom-btn btn-3"><span>Ver más</span></button>
+      </div>
+    </div>
+    <div>
+      <img src="https://i.ibb.co/G57P0Pb/card4.png" alt="" />
+      <h3>Grupo Lehren</h3>
+      <p>
+        Expect more. World class performance, with more privacy, more
+        productivity, and more value.
+      </p>
+      <div class="botones">
+        <button class="custom-btn btn-3"><span>Ver más</span></button>
+      </div>
+    </div>
+  </section>
+   </div>
+
+<div class="container_01">
+   <section class="xbox">
+    <div class="content">
+      <h2>Grupo Lehren</h2>
+      <p>Xbox Game Pass Ultimate Xbox Live Gold and over 100 high-quality
+        console and PC games. Play together with friends and discover your
+        next favorite game.</p>
+        <div class="botones">
+          <button class="custom-btn btn-3"><span>Ver más</span></button>
+        </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+    <!-- /*======== TEXTO E IMAGEN ===========*/ -->
+    <div class="container-intro section">
+      <div class="row">
+          <div class="col-md-6">
+              <h3>
+                  Bienvenido
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Tempore optio doloremque vero, maxime a qui reprehenderit
+                dolore consectetur vitae suscipit odit. Labore necessitatibus
+                quasi suscipit minus nihil. Alias, harum aspernatur.
+              </p>
+              <div class="botones">
+                <button class="custom-btn btn-3"><span>Ver más</span></button>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt=""/>
+          </div>
+      </div>  
+      </div>
+  </div>
+
+      <!--BOOTSTRAP SCRIPTS-->
+
+  
+  <!--BOOTSTRAP SCRIPTS-->
+  
+      <!-- Modal  SignUP-->
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Registro:
+              Contraseña con al menos 6 caracteres
+            </h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+           </div>
+           <div class="modal-body">
+            <form id="signup-form">
+              <div class="form-group">
+                 <input type="text" id="signup-email" class="form-control"
+                 placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                 <input type="password" id="signup-password" class="form-control"
+                 placeholder="Contraseña" required>
+              </div>
+              <button type="submit" class="btn btn-primary">SignUp</button>
+            </form>
+           </div>
+         </div>
+        </div>
+      </div>
+                 
+                 
+                 
+                  <!-- Modal  SignIn-->
+                  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Ingresa con tu correo de Gmail a nuestra plataforma y mantente informado sobre
+                          promociones y avisos importantes
+                        </h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                       <div class="modal-body">
+                          
+                        <form id="login-form">
+                           
+                          <!--div class="form-group">
+                             <input type="text" id="login-email" class="form-control"
+                             placeholder="E-mail" required>
+                          </div>
+                          <div class="form-group">
+                             <input type="password" id="login-password" class="form-control"
+                             placeholder="Contraseña" required>
+                          </div>
+                          
+                          <button type="submit" class="btn btn-info btn-block">Ingresa</button-->
+                          
+                          <button type="button" class="btn btn-success btn-block black-background white" id="googleLogin"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;Ingresa o Regístrate con Gmail</button>
+                          <!--button type="submit" class="btn btn-primary btn-block" id="facebookLogin"><i class="fab fa-facebook"></i>&nbsp;Ingresa o Regístrate con Facebook</button-->
+                        </form>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+
+
+
+
+
+      <!-- Carbon -->
+      <section class="carbon dark">
+        <div class="container-banner">
+            <div class="content">
+                <h2>Lerehn</h2>
+                <p>Grupo Lehren</p>
+                <div class="botones">
+                  <button class="custom-btn btn-3"><span>Ver más</span></button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+
+
+
+<!-- REGISTRO FIREBASE -->
+  <!--MAIN CONTENT-->
+  <div class="container p-5" style="z-index:1">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+                
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>asldkasdjalslk</h6>
+          <br>
+          <p class="text-justify">
+            Generamos experiencias de aprendizaje ancladas en experimentación, 
+            libertad creativa y discernimiento crítico. Nos transformamos, y 
+            transformamos a los demás..</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Grupo Lehren</h6>
+          <br>
+          <ul class="footer-links">
+            <li><a href="#">SAE Institute México</a></li>
+            <li><a href="#">Instituto Artek</a></li>
+            <li><a href="#">Instituto Genus</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Lehren</h6>
+          <br>
+          <ul class="footer-links">
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Politicas de privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; by 
+       <a href="#">Grupo Lehren</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-instagram"></i></a></li>
+            <!--li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li-->   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!--FIREBASE SCRIPTS-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+            
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+                   
+     <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDz45ptF-NIezoEqXJ_3qPEKatV4_NUHUc",
+          authDomain: "integrador-lehren.firebaseapp.com",
+          projectId: "integrador-lehren",
+          storageBucket: "integrador-lehren.appspot.com",
+          messagingSenderId: "394229978093",
+          appId: "1:394229978093:web:2d48fe631091dd2ea10de4",
+          measurementId: "G-7T2B9BE8KT"
+        };
+                 
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        // FireStore base de datos
+        const fs = firebase.firestore();
+        firebase.analytics();
+     </script>
+                     <!--TERMINA FIREBASE-->
+      <!--Registro-->
+    <script type="module" src="./registro.js"></script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/utils.js"></script>
+  
+        <!-- PWA -->
+    <script src="./script.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
