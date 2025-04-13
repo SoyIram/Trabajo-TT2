@@ -472,7 +472,7 @@ position: relative;
     height: 64px;
     margin: 0 auto;
     padding: 10px 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.157);
+    border-left: 1px solid rgba(255, 255, 255, 0);
     border-right: 1px solid rgba(255, 255, 255, 0.157);
   }
   header .header-search .search {
