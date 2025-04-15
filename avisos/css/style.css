@@ -503,7 +503,7 @@ header .header-search .search input[type=search] {
   outline: none;
   border: none;
   border-radius: 2px;
-  background-color: rgba(18, 156, 194, 0.407);
+  background-color: rgb(255, 255, 255);
 }
 header .header-search .search ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
