@@ -486,7 +486,7 @@ header .header-search .search {
   width: calc(100% - 35px);
   margin: 0 auto;
 }
-header .header-search .search i {
+header .header-search .search i { /*Esta es la lupa*/
   position: absolute;
   top: 8px;
   left: 10px;
