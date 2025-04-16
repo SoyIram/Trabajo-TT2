@@ -648,7 +648,7 @@ header ul.is-sticky li a.active {
 
 /* start: footer styles */
 footer {
-    background: rgba(227, 227, 227, 0.783);
+    background: rgb(255, 255, 255);
     padding: 8rem 0;
 }
 
