@@ -481,11 +481,11 @@ position: relative;
     width: calc(100% - 35px);
     margin: 0 auto;
   }
-  header .header-search .search i {
+  header .header-search .search i { /*Esta es la lupa*/
     position: absolute;
     top: 8px;
     left: 10px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255);
     font-size: 28px;
     cursor: pointer;
   }
