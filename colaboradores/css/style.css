@@ -690,7 +690,7 @@ footer .footer-quick-links ul li {
 }
 
 footer .footer-quick-links ul li a {
-    color: #777;
+    color: #676767; /*Color normal de los links*/
     text-decoration: none;
 }
 
