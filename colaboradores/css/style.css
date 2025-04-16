@@ -658,7 +658,7 @@ footer .flex {
 }
 
 footer h5 {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); /*Titulos h5 del apartado del footer*/
     margin-bottom: 1rem;
     font-weight: 300;
 }
