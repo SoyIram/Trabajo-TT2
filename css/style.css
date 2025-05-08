@@ -21,9 +21,9 @@ body {
   :root {
     --blanco: #ffffff;
     --background: #f5f5f5; /* Fondo gris claro */
-    --color-principal: #242d32;
-    --color-secundario: #00bcd4; /* Azul celeste */
-    --color-secundario-2: #008c9e; /* Azul celeste oscuro */
+    --color-principal: #007bff; /* Azul principal */
+    --color-secundario: #6c757d; /* Gris oscuro */
+    --color-secundario-2: #0056b3; /* Azul más oscuro */
     --color-terciario: #e6e6e6;
     --font-body: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -136,7 +136,7 @@ body {
     height: 64px;
     color: var(--blanco); /* Texto blanco */
     padding: 0 20px;
-    background-color: var(--color-secundario); /* Fondo azul celeste */
+    background-color: var(--color-principal); /* Cambiar a azul principal */
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
 }
   header .nav-btn {
@@ -271,12 +271,12 @@ header .header-search .search-list-item .flex {
     line-height: 64px;
   }
   header .header-menu ul li a {
-    color: #fff;
+    color: var(--color-principal); /* Ajustar color de los enlaces del menú */
     font-size: 17px;
     padding: 4px;
   }
   header .header-menu ul li a:hover {
-    opacity: 0.6;
+    background-color: var(--color-secundario-2); /* Azul más oscuro al pasar el mouse */
     text-decoration: none;
   }
   header .header-menu ul li a:hover {
@@ -338,7 +338,7 @@ header .header-search .search-list-item .flex {
   }
   nav .nav-header {
     display: block;
-    background-color: var(--color-secundario);
+    background-color: var(--color-principal); /* Cambiar a azul principal */
   }
   nav .nav-header .logo-wrap {
     padding: 1.7em 1em;
@@ -405,12 +405,12 @@ header .header-search .search-list-item .flex {
     display: block;
     width: 100%;
     font-size: 1rem;
-    color: #5c5c5c;
+    color: var(--color-principal); /* Asegurar que los enlaces sean consistentes */
     padding: 0.625em 1.3em;
     text-decoration: none;
   }
   nav .nav-categories li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-secundario-2); /* Azul más oscuro al pasar el mouse */
   }
   nav.open {
     left: 0px;
@@ -994,14 +994,14 @@ header .header-search .search-list-item .flex {
     }
   }
 button, .c-header-filters_button,
-.o-button {
+.o-button, .custom-btn {
     display: inline-block;
     overflow: visible;
     margin: 0;
     padding: 10px 20px; /* Espaciado interno */
     outline: 0;
     border: none;
-    background: var(--color-secundario); /* Fondo azul celeste */
+    background: var(--color-principal); /* Fondo azul principal */
     color: var(--blanco); /* Texto blanco */
     vertical-align: middle;
     text-align: center;
@@ -1019,8 +1019,8 @@ button, .c-header-filters_button,
 }
 
 button:hover, .c-header-filters_button:hover,
-.o-button:hover {
-    background: var(--color-secundario-2); /* Fondo azul celeste oscuro al pasar el mouse */
+.o-button:hover, .custom-btn:hover {
+    background: var(--color-secundario-2); /* Azul más oscuro al pasar el mouse */
 }
   
   button:hover, .c-header-filters_button:hover,
@@ -2626,7 +2626,7 @@ section{
 
 /* FOOTER */
 .site-footer {
-  background-color: var(--color-secundario); /* Fondo azul celeste */
+  background-color: var(--color-principal); /* Fondo azul principal */
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
@@ -2656,7 +2656,7 @@ section{
 }
 
 .site-footer a:hover {
-  color: var(--color-secundario-2); /* Azul celeste oscuro al pasar el mouse */
+  color: var(--color-secundario-2); /* Azul más oscuro al pasar el mouse */
   text-decoration: underline;
 }
 
@@ -2676,7 +2676,7 @@ section{
 .footer-links a:active,
 .footer-links a:focus,
 .footer-links a:hover {
-  color: var(--color-secundario-2); /* Azul celeste oscuro */
+  color: var(--color-secundario-2); /* Azul más oscuro */
   text-decoration: none;
 }
 
@@ -2906,94 +2906,14 @@ button {
   width: 100%;
 }
 
-
-
-/* button div 
-#buttons {
-  padding-top: 0px;
-  text-align: center;
+.custom-btn.btn-3 {
+  background-color: var(--color-principal); /* Fondo azul principal */
+  color: var(--blanco); /* Texto blanco */
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-
-.btn {
-  border-radius: 5px;
-  padding: 5px 25px;
-  font-size: 1rem;
-  text-decoration: none;
-  margin: 10px;
-  color: #fff;
-  position: relative;
-  display: inline-block;
+.custom-btn.btn-3:hover {
+  background-color: var(--color-secundario-2); /* Azul más oscuro al pasar el mouse */
+  color: var(--blanco); /* Asegurar texto blanco al pasar el mouse */
 }
-
-
-.btn:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  box-shadow: 0px 1px 0px 0px;
-}
-
-.blue {
-  background-color: var(--color-secundario);
-  box-shadow: 0px 5px 0px 0px var(--color-secundario-2);
-}
-
-.blue:hover {
-  background-color: var(--color-secundario-2);
-  transition: ease-in .3s;
-  color: var(--blanco);
-}
-
-.green {
-  background-color: #2ecc71;
-  box-shadow: 0px 5px 0px 0px #15B358;
-}
-
-.green:hover {
-  background-color: #48E68B;
-}
-
-.red {
-  background-color: #e74c3c;
-  box-shadow: 0px 5px 0px 0px #CE3323;
-}
-
-.red:hover {
-  background-color: #FF6656;
-}
-
-.purple {
-  background-color: #9b59b6;
-  box-shadow: 0px 5px 0px 0px #82409D;
-}
-
-.purple:hover {
-  background-color: #B573D0;
-}
-
-.orange {
-  background-color: #e67e22;
-  box-shadow: 0px 5px 0px 0px #CD6509;
-}
-
-.orange:hover {
-  background-color: #FF983C;
-}
-
-.yellow {
-  background-color: #f1c40f;
-  box-shadow: 0px 5px 0px 0px #D8AB00;
-}
-
-.yellow:hover {
-  background-color: #FFDE29;
-}
-
-
-#buttons p {
-  text-align: center;
-  color: #55acee;
-  padding-top: 20px;
-}
-
-*/

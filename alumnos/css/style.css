@@ -1,3 +1,14 @@
+:root {
+    --blanco: #ffffff;
+    --background: #f5f5f5; /* Fondo gris claro */
+    --color-principal: #007bff;
+    --color-secundario: #6c757d;
+    --color-secundario-2: #008c9e; /* Azul celeste oscuro */
+    --color-terciario: #e6e6e6;
+  
+    --font-body: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -5,11 +16,10 @@ body {
     color: #000000;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
-    background-color: #eee;
-    /*height: 100%;*/
-  }
+    background-color: var(--background);
+}
 
-  #preloader {
+#preloader {
     position: fixed;
     left: 0;
     top: 0;
@@ -18,13 +28,7 @@ body {
     height: 100%;
     overflow: visible;
     background: var(--background)  url("../../img/preload/preload.svg") no-repeat center center;
-    }
-
-
-
-
-
-
+}
 
 /*** ALUMNOS CSS ***/
 /* ----------- 
@@ -58,8 +62,6 @@ HOME SECTION
 	margin: 0;
 }
 
-
-
 .home .home-btn01{
 	margin-top: 30px;
 }
@@ -92,7 +94,6 @@ HOME SECTION
 .home-img{
 	position: relative;
 }
-
 
 /* Boton de home */
 
@@ -196,7 +197,6 @@ Responsive Secciones
     padding: 0px;
   }*/
 
-
 @media (max-width: 767px){
 	.home-text{
 		margin-bottom: 0px;
@@ -231,10 +231,7 @@ Responsive Secciones
 	}
 }
 
-
-
 /**** ****/
-
 
 /***SCROLL DOWN****/
 .container-scroll{
@@ -302,23 +299,6 @@ position: relative;
   }
 }
 
-
-
-
-
-
-  :root {
-    --blanco: #ffffff;
-    --background: #eeeeee;
-    --color-principal: #242d32;
-    --color-secundario: #50899c;
-    --color-terciario: #e6e6e6;
-  
-    --font-body: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    }
-
-
   /*Tamaño del contenido obtener correo*/
   .alert-heading{
     font-size: 1rem;
@@ -343,7 +323,6 @@ position: relative;
     background: #b3d4fc;
     text-shadow: none;
   }
-
 
   .registro{
     position: absolute;
@@ -384,15 +363,6 @@ position: relative;
   /* -----------------------------------------------------
   Clearfix
   -------------------------------------------------------- */
-  .clearfix {
-    *zoom: 1;
-  }
-  .clearfix::after {
-    content: "";
-    display: table;
-    line-height: 0;
-    clear: both;
-  }
   
   /* -----------------------------------------------------
      Header
@@ -608,7 +578,7 @@ position: relative;
   }
   nav .nav-header {
     display: block;
-    background-color: var(--color-secundario);
+    background-color: var(--color-principal);
   }
   nav .nav-header .logo-wrap {
     padding: 1.7em 1em;
@@ -800,11 +770,7 @@ position: relative;
     display: block;
   }
 
-
-
   /*** CARDS ****/
-
-
 
 .viewport{
   position:relative;
@@ -1037,13 +1003,6 @@ animation: AnimationName 10s ease infinite;
   width:100%;
 }
 
-
-
-
-
-
-
-
 /*Carbon*/
 
 /* Carbon */
@@ -1077,15 +1036,6 @@ section{
 
 }
 
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 .site-footer
 {
@@ -1114,12 +1064,11 @@ section{
 }
 .site-footer a
 {
-  color:#737373;
+  color:var(--blanco);
 }
 .site-footer a:hover
 {
-  color:var(--color-secundario);
-  text-decoration:none;
+  color:var(--color-secundario-2);
 }
 .footer-links
 {
@@ -1250,8 +1199,6 @@ section{
     font-weight:600
   }
 }
-
-
 
 /**** Acordeon ****/
 /* ACCORDEON */
@@ -1388,3 +1335,35 @@ section{
    display: none;
   }
  }
+
+/* Actualización de estilos para consistencia */
+.nav-header {
+  background-color: var(--color-principal);
+}
+
+.nav-categories ul-base li a {
+  color: var(--color-principal);
+}
+
+.nav-categories ul-base li a:hover {
+  background-color: var(--color-secundario-2);
+}
+
+button, .custom-btn {
+  background-color: var(--color-principal);
+  color: var(--blanco);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .custom-btn:hover {
+  background-color: var(--color-secundario-2);
+}
+
+.site-footer a {
+  color: var(--blanco);
+}
+
+.site-footer a:hover {
+  color: var(--color-secundario-2);
+}
