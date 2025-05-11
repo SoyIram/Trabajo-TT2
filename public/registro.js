@@ -14,6 +14,7 @@ const loginCheck = user =>{
   }
 }
 
+/*
 // Sign Up Event
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
@@ -33,54 +34,82 @@ signupForm.addEventListener('submit', (e) => {
             }, 5000);
 
         })
-});
-
-// Sign In Event
+});*/
+// Login con correo y contraseña
 const signinForm = document.querySelector('#login-form');
-signinForm.addEventListener('submit', e => {
+
+signinForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     const email = document.querySelector('#login-email').value;
     const password = document.querySelector('#login-password').value;
-    auth.
-        signInWithEmailAndPassword(email, password)
-        .then(userCredential => {
-            //Clear the form
-            signupForm.reset();
-            //Close the modal
-            $('#signinModal').modal('hide')
-            setTimeout(() => {
-                window.location='index.html';
-            }, 5000);
-        })
+
+    try {
+        const userCredential = await auth.signInWithEmailAndPassword(email, password);
+        const user = userCredential.user;
+
+        if (!user.emailVerified) {
+            alert('Por favor verifica tu correo electrónico antes de iniciar sesión.');
+            return;
+        }
+
+        await sendUserInformation(user);
+
+        signinForm.reset();
+        $('#signinModal').modal('hide');
+
+        setTimeout(() => {
+            window.location = 'index.html';
+        }, 2000);
+
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error.message);
+        alert('Error: ' + error.message);
+    }
 });
 
 // Logout
 const logout = document.querySelector('#logout');
 
-logout.addEventListener('click', e => {
-    e.preventDefault();
-    auth.signOut().then(()=>{
-        console.log('sign out')
-    })
-})
+if (logout) {
+    logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            console.log('Sesión cerrada');
+        });
+    });
+}
 
 // Google login
-const googleButton = document.querySelector('#googleLogin')
-googleButton.addEventListener('click', e => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider)
-  .then(result => {
-    console.log('google sign in');
-    const user = result.user;
-    sendUserInformation(user);
+const googleButton = document.querySelector('#googleLogin');
 
-    signupForm.reset();
-    $('#signinModal').modal('hide');
-  })
-  .catch(err => {
-    console.log(err)
-  })
-})
+googleButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    try {
+        const result = await auth.signInWithPopup(provider);
+        const user = result.user;
+
+        if (!user.emailVerified && !user.providerData.some(p => p.providerId === 'google.com')) {
+            alert('Por favor verifica tu correo antes de continuar.');
+            return;
+        }
+
+        await sendUserInformation(user);
+
+        // Cerrar modal
+        $('#signinModal').modal('hide');
+
+        setTimeout(() => {
+            window.location = 'index.html';
+        }, 2000);
+    } catch (err) {
+        console.error('Error en login con Google:', err.message);
+        alert('Error al iniciar sesión con Google: ' + err.message);
+    }
+});
+
 
 //Facebook Login
 //const facebookButton = document.querySelector('#facebookLogin')
@@ -232,8 +261,8 @@ async function sendUserInformation(user) {
 
 
     const links = {
-      'ipn.mx': '/alumnos/mi-espacio.html',
-      'gmail.com': '/docentes/mi-espacio.html'
+      'ipn.mx': '/public/alumnos/mi-espacio.html',
+      'gmail.com': '/public/alumnos/mi-espacio.html'
     };
 
     window.location = links[domain] ? links[domain] : '/';
