@@ -14,28 +14,6 @@ const loginCheck = user =>{
   }
 }
 
-/*
-// Sign Up Event
-const signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const email = document.querySelector('#signup-email').value;
-    const password = document.querySelector('#signup-password').value;
-
-    auth.createUserWithEmailAndPassword(email, password)
-        .then(userCredential => {
-            //Clear the form
-            signupForm.reset();
-            //Close the modal
-            $('#signupModal').modal('hide');
-            setTimeout(() => {
-                window.location='index.html';
-            }, 5000);
-
-        })
-});*/
-// Login con correo y contraseña
 const signinForm = document.querySelector('#login-form');
 
 signinForm.addEventListener('submit', async (e) => {
@@ -110,25 +88,32 @@ googleButton.addEventListener('click', async (e) => {
     }
 });
 
+// Microsoft login
+const microsoftButton = document.querySelector('#microsoftLogin');
 
-//Facebook Login
-//const facebookButton = document.querySelector('#facebookLogin')
-//facebookButton.addEventListener('click', e =>{
-  //e.preventDefault();
-  //const provider = new firebase.auth.FacebookAuthProvider();
-  //auth.signInWithPopup(provider)
-  //.then(result => {
-    //console.log(result);
-    //console.log('facebook sign in')
-  //})
-  //.catch(err => {
-    //console.log(err)
-  //})
-//})
+microsoftButton?.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.OAuthProvider('microsoft.com');
 
+    try {
+        const result = await auth.signInWithPopup(provider);
+        const user = result.user;
 
-// Posts
-// 22 de MARZO 2021 COMENTE LA li Es decir la lista para que no aparezcan los anuncios solo en la seccion de avisos
+        // Microsoft no requiere emailVerified explícito
+        await sendUserInformation(user);
+
+        // Cerrar modal
+        $('#signinModal').modal('hide');
+
+        setTimeout(() => {
+            window.location = 'index.html';
+        }, 2000);
+    } catch (err) {
+        console.error('Error en login con Microsoft:', err.message);
+        alert('Error al iniciar sesión con Microsoft: ' + err.message);
+    }
+});
+
 const postList = document.querySelector('.posts');
 const setupPosts = data => {
     if (data.length) {
@@ -154,9 +139,8 @@ const setupPosts = data => {
     }
   }
 
-
-//Eventos
-// listar los datos para los usuarios que estes autenticados
+// Eventos
+// listar los datos para los usuarios que estés autenticados
 
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -172,13 +156,10 @@ auth.onAuthStateChanged(user => {
     }
 })
 
-
 // Onclick
 function noticias() {
   document.location.href = "./index.html"
 }
-
-
 
 ///// Nuevo script
 
@@ -196,10 +177,6 @@ function observador(){
     aparece(user);
     var displayName = user.displayName;
     var email = user.email;
-
-   // console.log('*******');
-   // console.log(user.emailVerified)
-   // console.log('*******');
 
     var emailVerified = user.emailVerified;
     var photoURL = user.photoURL;
@@ -222,48 +199,63 @@ function observador(){
 }
 observador();
 
-
 function aparece(user){
   var user = user;
   var contenido = document.getElementById('contenido');
   if(user.emailVerified){
-
-  contenido.innerHTML = `
+    contenido.innerHTML = `
       <div>
           <br>
           <p>Bienvenido.</p>
           <h4 class="alert-heading">${user.email}</h4>
       </div>
-  `;
-}
-  
+    `;
+  }
 }
 
 async function sendUserInformation(user) {
-    //const buttonId = 0;
-    const userTypes = {
-        'gmail.com': 'Alumno',
-        'ipn.mx': 'Profesor'
-    };
+    const email = user.email.toLowerCase();
+    const domain = email.split('@')[1];  // ejemplo: "alumno.ipn.mx" o "profesor.ipn.mx"
 
-    const allowDomains = ['ipn.mx', 'gmail.com'];
-    const {email} = user;
-    const domain = email.split('@')[1];
-    const type = allowDomains.includes(domain) ? userTypes[domain] : 'Administrador';
-    const userDB = new User(type, email);
-
-    const userExist = await isUserRegistered(email);
-    if(userExist) {
-      console.log('El usuario ya existe en firebase');
+    let userType = 'Administrador'; // valor por defecto si no cumple ningún caso
+    let redirectLink = '/';          // página por defecto
+// Definimos reglas claras según el dominio
+if (domain.endsWith('ipn.mx')) {
+    if (email.includes('alumno.')) {
+        userType = 'Alumno IPN';
+        redirectLink = '/public/ipn/alumnos/mi-espacio.html';
     } else {
-      saveUser(userDB);
+        userType = 'Alumno General';
+        redirectLink = '/public/alumnos/mi-espacio.html';
+    }
+}
+else if (domain === 'unam.mx') {
+    userType = 'Alumno UNAM';
+    redirectLink = '/public/unam/alumnos/mi-espacio.html';
+}
+else if (domain === 'gmail.com') {
+    userType = 'Alumno General';
+    redirectLink = '/public/alumnos/mi-espacio.html';
+}
+else {
+    // No se asigna tipo ni redirección si el dominio no es reconocido
+    console.warn('Dominio no reconocido:', domain);
+    return;
+}
+
+
+
+    // Creamos usuario para Firebase
+    const userDB = new User(userType, email);
+
+    // Guardar usuario si no existe
+    const userExist = await isUserRegistered(email);
+    if (!userExist) {
+        await saveUser(userDB);
+    } else {
+        console.log('El usuario ya existe en Firebase');
     }
 
-
-    const links = {
-      'ipn.mx': '/public/alumnos/mi-espacio.html',
-      'gmail.com': '/public/alumnos/mi-espacio.html'
-    };
-
-    window.location = links[domain] ? links[domain] : '/';
+    // Redirigir al usuario según su tipo
+    window.location = redirectLink;
 }

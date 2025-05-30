@@ -25,6 +25,7 @@
 
 <link rel="stylesheet" href="./css/style.css">
 <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -442,14 +443,13 @@
                  
                  
                  
- <!-- Modal SignIn-->
+<!-- Modal SignIn-->
 <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h6 class="modal-title" id="exampleModalLabel">
-          Ingresa con tu correo de Gmail a nuestra plataforma y disfruta 
-          la experiencia
+          Ingresa con tu correo a nuestra plataforma y disfruta la experiencia
         </h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -462,6 +462,12 @@
             <i class="fab fa-google" aria-hidden="true" style="font-size: 1.5em; margin-right: 10px;"></i>
             <span style="font-size: 1.1em; font-weight: bold;">Ingresa o Regístrate con Google</span>
           </button>
+
+          <!-- Botón de inicio de sesión con Microsoft -->
+<button type="button" class="btn btn-microsoft btn-block d-flex align-items-center justify-content-center p-3 mt-2" id="microsoftLogin">
+  <i class="fab fa-microsoft" aria-hidden="true" style="font-size: 1.5em; margin-right: 10px;"></i>
+  <span style="font-size: 1.1em; font-weight: bold;">Ingresa o Regístrate con Microsoft</span>
+</button>
         </form>
       </div>
     </div>
@@ -478,9 +484,22 @@
     transition: background-color 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
+
   .btn-google:hover {
     background-color: #c1351d;
+  }
+
+  .btn-microsoft {
+    background-color: #2F2F2F;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-microsoft:hover {
+    background-color: #1f1f1f;
   }
 
   .black-background {
@@ -499,12 +518,13 @@
   .modal-body {
     background-color: #ffffff;
   }
-  
+
   .modal-content {
     border-radius: 15px;
     border: none;
   }
 </style>
+
 
       <!-- Carbon -->
       <section class="carbon dark">
