@@ -220,28 +220,19 @@ async function sendUserInformation(user) {
     let userType = 'Administrador'; // valor por defecto si no cumple ningún caso
     let redirectLink = '/';          // página por defecto
 // Definimos reglas claras según el dominio
-if (domain.endsWith('ipn.mx')) {
-    if (email.includes('alumno.')) {
-        userType = 'Alumno IPN';
-        redirectLink = '/public/ipn/alumnos/mi-espacio.html';
-    } else {
-        userType = 'Alumno General';
-        redirectLink = '/public/alumnos/mi-espacio.html';
-    }
+if (domain.endsWith('ipn.mx') && email.includes('alumno.')) {
+    userType = 'Alumno IPN';
+    redirectLink = '/public/ipn/alumnos/ipn.html';
 }
-else if (domain === 'unam.mx') {
+else if (domain === 'ga.com.mx') {
     userType = 'Alumno UNAM';
-    redirectLink = '/public/unam/alumnos/mi-espacio.html';
+    redirectLink = '/public/alumnos/unam.html';
 }
 else if (domain === 'gmail.com') {
     userType = 'Alumno General';
     redirectLink = '/public/alumnos/mi-espacio.html';
 }
-else {
-    // No se asigna tipo ni redirección si el dominio no es reconocido
-    console.warn('Dominio no reconocido:', domain);
-    return;
-}
+
 
 
 
